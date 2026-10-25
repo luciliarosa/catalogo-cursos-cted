@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Detalhes completos do curso - Centro de Tecnologias e Educação Digital (CTED) - SESI-SP" />
+  <title>Detalhes do Curso | SESI + Indústria</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo-sesi.svg" />
+  <link rel="stylesheet" href="css/style.css?v=3.8" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Menu principal -->
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="SESI Indústria - Página inicial">
+        <img src="assets/icons/logo-sesi-industria-primary.svg" alt="SESI + Indústria" />
+      </a>
+      <nav role="navigation" aria-label="Navegação principal">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Início</a></li>
+          <li><a href="cursos.html" class="nav-link">Cursos</a></li>
+          <li><a href="index.html#sobre" class="nav-link">Sobre</a></li>
+          <li><a id="nav-btn-ava" href="cursos.html" class="btn-aluno">Área do aluno</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="details-page">
+    <!-- Carregando -->
+    <div id="loading-state" class="container state-container" aria-live="polite">
+      <div class="spinner"></div>
+      <p class="state-title">Carregando detalhes do curso...</p>
+      <p class="state-desc">Buscando informações na base de dados do CTED.</p>
+    </div>
+
+    <!-- Mensagem de erro -->
+    <div id="error-state" class="container" style="display: none;">
+      <div class="error-box" role="alert">
+        <h2 class="error-title">Curso não encontrado</h2>
+        <p id="error-message" class="state-desc" style="margin-bottom: 18px;">
+          Não foi possível localizar o curso solicitado.
+        </p>
+        <a href="cursos.html" class="btn-search" style="display: inline-flex; align-items: center; height: 42px;">Voltar para o Catálogo</a>
+      </div>
+    </div>
+
+    <!-- Conteúdo do curso -->
+    <div id="course-content" style="display: none;">
+      <!-- Topo do curso -->
+      <section class="detail-hero" aria-label="Resumo do curso">
+        <div class="container detail-hero-grid">
+          <div class="detail-hero-left">
+            <div id="detail-category-badge" class="badge-category badge-matematica detail-badge">
+              <img id="detail-category-icon" src="assets/icons/icon-matematica-20px.svg" alt="" aria-hidden="true" />
+              <span id="detail-category-name">MATEMÁTICA</span>
+            </div>
+
+            <h1 id="detail-title" class="detail-title">Matemática para a Precisão: Medidas e Escalas na Metalurgia</h1>
+
+            <ul class="detail-meta-list">
+              <li class="detail-meta-item">
+                <img src="assets/icons/calendar_check.svg" alt="" class="detail-meta-icon" aria-hidden="true" />
+                <span>Início do curso: <strong id="detail-available-date">05/01/2026</strong></span>
+              </li>
+              <li class="detail-meta-item">
+                <img src="assets/icons/award_seal.svg" alt="" class="detail-meta-icon" aria-hidden="true" />
+                <span>Certificação: <strong id="detail-certification">SESI</strong></span>
+              </li>
+            </ul>
+
+            <a id="btn-hero-ava" href="ava.html" class="btn-matricule-se">
+              Matricule-se
+              <img src="assets/icons/arrow-navigation-1.svg" alt="" aria-hidden="true" class="btn-matricule-se-arrow" />
+            </a>
+          </div>
+
+          <div class="video-thumb-container detail-video-thumb">
+            <img id="detail-image" src="assets/images/video-thumb.png" alt="Vídeo de apresentação do curso" />
+            <button class="btn-play-video" type="button" aria-label="Reproduzir vídeo de apresentação do curso" onclick="document.getElementById('btn-hero-ava').click()">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 5v14l11-7z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Diferenciais do curso -->
+      <section class="section-features-beige" aria-label="Diferenciais do curso">
+        <div class="container features-beige-grid">
+          <div class="card-beige">
+            <img src="assets/icons/01-certificacao-bege.svg" alt="" aria-hidden="true" />
+            <h3>Certificação SESI</h3>
+            <p>Cursos com a melhor certificação do mercado industrial reconhecidos pelo SESI.</p>
+          </div>
+          <div class="card-beige">
+            <img src="assets/icons/02-professores-bege.svg" alt="" aria-hidden="true" />
+            <h3>Professores especialistas</h3>
+            <p>Contamos com professores reconhecidos por sua excelência no mercado.</p>
+          </div>
+          <div class="card-beige">
+            <img src="assets/icons/03-suporte-bege.svg" alt="" aria-hidden="true" />
+            <h3>Suporte contínuo</h3>
+            <p>Você não está sozinho! Acompanhamento online durante todo o curso.</p>
+          </div>
+          <div class="card-beige">
+            <img src="assets/icons/04-flexibilidade-bege.svg" alt="" aria-hidden="true" />
+            <h3>Flexibilidade</h3>
+            <p>Turmas presenciais e online com horários que se adaptam à sua rotina.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sobre o curso e sanfonas -->
+      <section class="section-about-course" aria-label="Sobre o curso e conteúdo programático">
+        <div class="container about-course-grid">
+          <div class="about-text">
+            <h2>Sobre o curso</h2>
+            <div id="detail-full-description">
+              <p>
+                Explore nosso curso de Matemática para a Precisão: Medidas e Escalas na Metalurgia, perfeito para quem deseja se destacar nesse campo! Este programa abrangente foi desenvolvido para capacitar profissionais com as habilidades e conhecimentos fundamentais para garantir medições precisas e eficientes no ambiente metalúrgico.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-list">
+            <!-- Módulos -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false" aria-controls="acc-body-modules">
+                <span>Módulos</span>
+                <img src="assets/icons/add_2.svg" alt="" aria-hidden="true" class="acc-icon-img" />
+              </button>
+              <div id="acc-body-modules" class="accordion-body">
+                <div id="modules-container" class="figma-accordion-content">
+                  <div class="figma-module-block">
+                    <h4>1. Introdução à Matemática na Metalurgia</h4>
+                    <ul>
+                      <li>Conceitos fundamentais de medidas e escalas aplicados à metalurgia.</li>
+                      <li>Importância da precisão nas medições e controle de qualidade.</li>
+                      <li>Panorama das normas e regulamentos no Brasil relacionados à metalurgia.</li>
+                    </ul>
+                  </div>
+
+                  <div class="figma-module-block">
+                    <h4>2. Identificação e Avaliação de Medidas</h4>
+                    <ul>
+                      <li>Tipos de medidas utilizadas: comprimento, massa, volume e temperatura.</li>
+                      <li>Técnicas de análise de precisão nas medições.</li>
+                      <li>Elaboração de gráficos e tabelas de medidas.</li>
+                    </ul>
+                  </div>
+
+                  <div class="figma-module-block">
+                    <h4>3. Normas e Regulamentações</h4>
+                    <ul>
+                      <li>Estudo das principais normas aplicáveis à metalurgia (ABNT, ISO, entre outras).</li>
+                      <li>Interpretação e aplicação prática das normas de medição.</li>
+                      <li>Atualizações e impactos legais nas práticas de medição.</li>
+                    </ul>
+                  </div>
+
+                  <div class="figma-module-block">
+                    <h4>4. Instrumentos de Medição</h4>
+                    <ul>
+                      <li>Tipos de instrumentos utilizados na metalurgia: paquímetros, micrômetros e balanças.</li>
+                      <li>Critérios de seleção, uso e calibração.</li>
+                      <li>Responsabilidades legais de operadores e supervisores.</li>
+                    </ul>
+                  </div>
+
+                  <div class="figma-module-block">
+                    <h4>5. Prevenção de Erros de Medição</h4>
+                    <ul>
+                      <li>Tipos de erros e incertezas nas medições.</li>
+                      <li>Procedimentos para garantir a precisão e exatidão.</li>
+                      <li>Treinamento prático em técnicas de medição.</li>
+                    </ul>
+                  </div>
+
+                  <div class="figma-module-block">
+                    <h4>6. Ergonomia e Eficiência na Medição</h4>
+                    <ul>
+                      <li>Princípios ergonômicos aplicados ao uso de instrumentos de medição.</li>
+                      <li>Prevenção de lesões por uso inadequado de ferramentas.</li>
+                      <li>Qualidade de vida no ambiente de trabalho.</li>
+                    </ul>
+                  </div>
+
+                  <div class="figma-module-block">
+                    <h4>7. Análise de Resultados de Medição</h4>
+                    <ul>
+                      <li>Técnicas de análise de dados de medições.</li>
+                      <li>Elaboração de relatórios e planos de ação para melhorias.</li>
+                      <li>Indicadores de precisão e melhoria contínua.</li>
+                    </ul>
+                  </div>
+
+                  <div class="figma-module-block">
+                    <h4>8. Cultura de Precisão e Comportamento Seguro</h4>
+                    <ul>
+                      <li>Desenvolvimento de uma cultura organizacional voltada à precisão nas medições.</li>
+                      <li>Comunicação eficaz e liderança em práticas de medição.</li>
+                      <li>Programas de conscientização e engajamento dos colaboradores.</li>
+                    </ul>
+                  </div>
+
+                  <div class="figma-module-block">
+                    <h4>9. Tecnologias Aplicadas à Medição</h4>
+                    <ul>
+                      <li>Uso de plataformas digitais, sensores e automação na medição de precisão.</li>
+                      <li>Sistemas de gestão de qualidade.</li>
+                      <li>Tendências e inovações no setor metalúrgico.</li>
+                    </ul>
+                  </div>
+
+                  <div class="figma-module-block">
+                    <h4>10. Avaliação Final e Certificação</h4>
+                    <ul>
+                      <li>Teste de conhecimentos adquiridos sobre medidas e escalas.</li>
+                      <li>Atividades práticas e estudos de caso.</li>
+                      <li>Emissão de certificado digital de conclusão.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Aulas online e avaliações -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false" aria-controls="acc-body-methodology">
+                <span>Aulas online e avaliações</span>
+                <img src="assets/icons/add_2.svg" alt="" aria-hidden="true" class="acc-icon-img" />
+              </button>
+              <div id="acc-body-methodology" class="accordion-body">
+                <div class="figma-accordion-content">
+                  <h4>Aulas online</h4>
+                  <p>As aulas são organizadas em módulos temáticos e disponibilizadas em formato multimídia, combinando:</p>
+                  <ul>
+                    <li>Vídeo-aulas com especialistas da área, gravadas em alta qualidade e com recursos visuais que facilitam a compreensão dos conteúdos técnicos.</li>
+                    <li>Materiais complementares como apostilas digitais, infográficos, artigos e estudos de caso.</li>
+                    <li>Atividades interativas, como quizzes, simulações e fóruns de discussão, que promovem o engajamento e a troca de experiências entre os participantes.</li>
+                    <li>Acesso multiplataforma, permitindo que os alunos estudem pelo computador, tablet ou celular, a qualquer hora e de qualquer lugar.</li>
+                  </ul>
+                  <p>Cada aula é acompanhada de recursos de acessibilidade, como legendas, transcrição de áudio e navegação intuitiva, garantindo inclusão e autonomia para todos os perfis de usuários.</p>
+
+                  <h4>Provas e Avaliações</h4>
+                  <p>As avaliações são realizadas diretamente na plataforma, com foco na verificação do aprendizado e na aplicação prática dos conhecimentos adquiridos:</p>
+                  <ul>
+                    <li>Provas objetivas ao final de cada módulo, com correção automática e feedback imediato.</li>
+                    <li>Estudos de caso e atividades práticas, que simulam situações reais da indústria e exigem análise crítica e tomada de decisão.</li>
+                    <li>Avaliação final integradora, que consolida os conteúdos do curso e valida a competência do aluno para atuar com segurança no ambiente industrial.</li>
+                    <li>Sistema antifraude, com controle de tempo, embaralhamento de questões e, opcionalmente, reconhecimento facial para garantir a integridade das avaliações.</li>
+                  </ul>
+                  <p style="margin-bottom: 0;">Ao concluir o curso e ser aprovado nas avaliações, o aluno recebe um certificado digital reconhecido, que pode ser compartilhado em redes profissionais e utilizado para comprovação de capacitação técnica.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dúvidas frequentes -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false" aria-controls="acc-body-faq">
+                <span>Dúvidas frequentes</span>
+                <img src="assets/icons/add_2.svg" alt="" aria-hidden="true" class="acc-icon-img" />
+              </button>
+              <div id="acc-body-faq" class="accordion-body">
+                <div class="figma-accordion-content">
+                  <div class="figma-faq-block">
+                    <h4>1. O curso é totalmente online?</h4>
+                    <p>Sim. Todas as aulas, atividades e avaliações são realizadas pela plataforma digital, permitindo que o aluno estude de onde estiver, no seu próprio ritmo.</p>
+                  </div>
+
+                  <div class="figma-faq-block">
+                    <h4>2. Preciso estar disponível em horários específicos?</h4>
+                    <p>Não. As aulas são gravadas e ficam disponíveis 24 horas por dia. O aluno pode acessar o conteúdo quando for mais conveniente, respeitando os prazos de cada módulo.</p>
+                  </div>
+
+                  <div class="figma-faq-block">
+                    <h4>3. Como são feitas as avaliações?</h4>
+                    <p>As avaliações são realizadas diretamente na plataforma, por meio de provas objetivas, estudos de caso e atividades práticas. Algumas avaliações podem ter tempo limitado e exigem atenção às instruções.</p>
+                  </div>
+
+                  <div class="figma-faq-block">
+                    <h4>4. O curso oferece certificado?</h4>
+                    <p>Sim. Ao concluir todos os módulos e ser aprovado nas avaliações, o aluno recebe um certificado digital de conclusão, válido em todo o território nacional.</p>
+                  </div>
+
+                  <div class="figma-faq-block">
+                    <h4>5. Quem são os professores?</h4>
+                    <p>O corpo docente é formado por especialistas, engenheiros e professores com ampla experiência em segurança do trabalho e atuação direta na indústria. Os perfis dos docentes estão disponíveis na plataforma.</p>
+                  </div>
+
+                  <div class="figma-faq-block">
+                    <h4>6. Há suporte para dúvidas durante o curso?</h4>
+                    <p>Sim. Os alunos podem enviar dúvidas por meio dos fóruns de discussão, chats da plataforma ou durante os webinários ao vivo. A equipe pedagógica está disponível para auxiliar durante todo o curso.</p>
+                  </div>
+
+                  <div class="figma-faq-block">
+                    <h4>7. O curso exige algum conhecimento prévio?</h4>
+                    <p>Não é obrigatório, mas é recomendado que o aluno tenha interesse ou alguma familiaridade com o ambiente industrial. O curso foi estruturado para atender tanto iniciantes quanto profissionais em busca de atualização.</p>
+                  </div>
+
+                  <div class="figma-faq-block">
+                    <h4>8. Posso acessar o curso pelo celular?</h4>
+                    <p>Sim. A plataforma é responsiva e compatível com computadores, tablets e smartphones, garantindo uma experiência completa em qualquer dispositivo.</p>
+                  </div>
+
+                  <div class="figma-faq-block">
+                    <h4>9. Quanto tempo tenho para concluir o curso?</h4>
+                    <p>O prazo para conclusão varia conforme o plano escolhido. Em geral, o aluno tem entre 3 a 6 meses para finalizar todos os módulos e avaliações.</p>
+                  </div>
+
+                  <div class="figma-faq-block" style="margin-bottom: 0;">
+                    <h4>10. O curso é reconhecido por órgãos oficiais?</h4>
+                    <p style="margin-bottom: 0;">O curso segue as diretrizes das Normas Regulamentadoras (NRs) e boas práticas da área, sendo reconhecido como formação complementar. Para certificações oficiais, é necessário verificar os requisitos específicos de cada órgão regulador.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Depoimentos -->
+      <section class="section-testimonials-beige" aria-label="Depoimentos de alunos">
+        <div class="container">
+          <div class="testimonials-header">
+            <div>
+              <p>DEPOIMENTOS</p>
+              <h2>Quem fez recomenda</h2>
+            </div>
+          </div>
+
+          <div id="detail-testimonials-carousel" class="testimonials-carousel">
+            <!-- Depoimento 1 -->
+            <article class="testimonial-card testimonial-card-white">
+              <p class="testimonial-quote">
+                “A experiência do curso foi incrível! As aulas foram muito bem estruturadas e o cronograma foi cuidadosamente planejado, facilitando muito o aprendizado.”
+              </p>
+              <div class="testimonial-author">
+                <div class="testimonial-name">Gabriel Santos</div>
+                <div class="testimonial-role">Analista na Empresa X</div>
+                <div class="stars-row" aria-label="Avaliação 5 de 5 estrelas">
+                  <img src="assets/icons/star-dark.svg" alt="" /><img src="assets/icons/star-dark.svg" alt="" /><img src="assets/icons/star-dark.svg" alt="" /><img src="assets/icons/star-dark.svg" alt="" /><img src="assets/icons/star-dark.svg" alt="" />
+                </div>
+              </div>
+            </article>
+
+            <!-- Depoimento 2 -->
+            <article class="testimonial-card testimonial-card-white">
+              <p class="testimonial-quote">
+                “Concluir o curso foi uma jornada enriquecedora. As aulas eram dinâmicas e o horário foi organizado para maximizar nosso tempo de estudo.”
+              </p>
+              <div class="testimonial-author">
+                <div class="testimonial-name">Maria Oliveira</div>
+                <div class="testimonial-role">Gerente de Projetos na Empresa Y</div>
+                <div class="stars-row" aria-label="Avaliação 5 de 5 estrelas">
+                  <img src="assets/icons/star-dark.svg" alt="" /><img src="assets/icons/star-dark.svg" alt="" /><img src="assets/icons/star-dark.svg" alt="" /><img src="assets/icons/star-dark.svg" alt="" /><img src="assets/icons/star-dark.svg" alt="" />
+                </div>
+              </div>
+            </article>
+
+            <!-- Depoimento 3 -->
+            <article class="testimonial-card testimonial-card-white">
+              <p class="testimonial-quote">
+                “O curso superou minhas expectativas! As aulas eram bem elaboradas e o planejamento do horário ajudou a manter o foco e a produtividade.”
+              </p>
+              <div class="testimonial-author">
+                <div class="testimonial-name">Lucas Almeida</div>
+                <div class="testimonial-role">Desenvolvedor na Empresa Z</div>
+                <div class="stars-row" aria-label="Avaliação 5 de 5 estrelas">
+                  <img src="assets/icons/star-dark.svg" alt="" /><img src="assets/icons/star-dark.svg" alt="" /><img src="assets/icons/star-dark.svg" alt="" /><img src="assets/icons/star-dark.svg" alt="" /><img src="assets/icons/star-dark.svg" alt="" />
+                </div>
+              </div>
+            </article>
+
+            <!-- Depoimento 4 -->
+            <article class="testimonial-card testimonial-card-white">
+              <p class="testimonial-quote">
+                “Finalizar o curso foi uma experiência motivadora. As aulas foram muito bem preparadas e o cronograma foi ideal para o aprendizado.”
+              </p>
+              <div class="testimonial-author">
+                <div class="testimonial-name">Ana Costa</div>
+                <div class="testimonial-role">Designer na Empresa W</div>
+                <div class="stars-row" aria-label="Avaliação 5 de 5 estrelas">
+                  <img src="assets/icons/star-dark.svg" alt="" /><img src="assets/icons/star-dark.svg" alt="" /><img src="assets/icons/star-dark.svg" alt="" /><img src="assets/icons/star-dark.svg" alt="" /><img src="assets/icons/star-dark.svg" alt="" />
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="testimonials-footer">
+            <button id="btn-detail-test-prev" class="btn-arrow-plain" type="button" aria-label="Depoimentos anteriores">
+              <img src="assets/icons/arrow-navigation.svg" alt="" />
+            </button>
+            <button id="btn-detail-test-next" class="btn-arrow-plain" type="button" aria-label="Próximos depoimentos">
+              <img src="assets/icons/arrow-navigation-1.svg" alt="" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fale com a gente -->
+      <section class="section-contact-cta" aria-label="Fale com a gente">
+        <div class="container contact-cta-inner">
+          <p class="contact-cta-tag">PRECISA DE AJUDA PARA DECIDIR?</p>
+          <h2 class="contact-cta-title">Fale com a gente</h2>
+          <a href="mailto:contato@sesindustria.com.br" class="btn-primary">
+            Mandar uma mensagem
+            <img src="assets/icons/arrow-navigation-1.svg" alt="" aria-hidden="true" style="width: 16px; height: 16px;" />
+          </a>
+        </div>
+      </section>
+
+      <!-- Barra fixa inferior de matrícula -->
+      <div id="fixed-enroll-bar" class="fixed-enroll-bar" role="region" aria-label="Barra rápida de matrícula">
+        <div class="fixed-enroll-inner">
+          <div id="fixed-title" class="fixed-course-title">Matemática para a Precisão: Medidas e Escalas na Metalurgia</div>
+          <a id="btn-fixed-ava" href="ava.html" class="btn-enroll-fixed">
+            Matricule-se
+            <img src="assets/icons/arrow-navigation-1.svg" alt="" aria-hidden="true" style="width: 16px; height: 16px;" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">
+            <img src="assets/icons/logo-sesi-industria-white.svg" alt="SESI Indústria" />
+          </div>
+          <div class="footer-contact">
+            <p>contato@sesindustria.com.br</p>
+            <p>Av. Paulista, 1313</p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="index.html#sobre">Certificação</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="index.html#sobre">Sobre</a></li>
+            <li><a href="index.html#sobre">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Cursos Populares</h4>
+          <ul>
+            <li><a href="cursos.html">Cultura Organizacional</a></li>
+            <li><a href="cursos.html">Ferramentas Google para Produtividade</a></li>
+            <li><a href="cursos.html">Excel Básico ao Avançado</a></li>
+            <li><a href="cursos.html">Trabalho em Equipe e Colaboração</a></li>
+            <li><a href="cursos.html">Gestão do Tempo e Produtividade</a></li>
+            <li><a href="cursos.html">Comunicação Assertiva</a></li>
+            <li><a href="cursos.html">Inteligência Emocional no Trabalho</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Suporte</h4>
+          <ul>
+            <li><a href="#">Termos de Uso</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Trabalhe Conosco</a></li>
+            <li><a href="#">Fale Conosco</a></li>
+            <li><a href="#">Central de Ajuda</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-rights">
+          <img src="assets/icons/logo-sesi.svg" alt="SESI" />
+          <span>Todos os direitos reservados.</span>
+        </div>
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn SESI"><img src="assets/icons/icon-linkedIn-24px.svg" alt="" /></a>
+          <a href="#" aria-label="Instagram SESI"><img src="assets/icons/icon-instagram-24px.svg" alt="" /></a>
+          <a href="#" aria-label="Facebook SESI"><img src="assets/icons/icon-facebook-24px.svg" alt="" /></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js?v=3.3"></script>
+  <script src="js/detalhes.js?v=3.3"></script>
+</body>
+</html>

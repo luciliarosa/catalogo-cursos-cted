@@ -1,0 +1,14 @@
+{
+  "files.encoding": "utf8",
+  "files.eol": "\n",
+  "dotnet.defaultSolution": "SesiCursos.sln",
+  "liveServer.settings.root": "/frontend",
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.CustomBrowser": "default",
+  "terminal.integrated.env.osx": {
+    "PATH": "${env:HOME}/.dotnet:/usr/local/share/dotnet:/opt/homebrew/bin:/usr/local/bin:${env:PATH}"
+  },
+  "terminal.integrated.env.linux": {
+    "PATH": "${env:HOME}/.dotnet:/usr/local/bin:${env:PATH}"
+  }
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Catálogo completo de cursos do Centro de Tecnologias e Educação Digital (CTED) - SESI-SP" />
+  <title>Catálogo de Cursos | SESI + Indústria</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo-sesi.svg" />
+  <link rel="stylesheet" href="css/style.css?v=3.8" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Menu principal -->
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="SESI Indústria - Página inicial">
+        <img src="assets/icons/logo-sesi-industria-primary.svg" alt="SESI + Indústria" />
+      </a>
+      <nav role="navigation" aria-label="Navegação principal">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Início</a></li>
+          <li><a href="cursos.html" class="nav-link" aria-current="page">Cursos</a></li>
+          <li><a href="index.html#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="cursos.html" class="btn-aluno">Área do aluno</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="catalog-page">
+    <div class="container">
+      <h1 class="page-title">Catálogo de Cursos</h1>
+      <p class="page-subtitle">
+        Encontre a formação ideal para impulsionar seu crescimento profissional na indústria brasileira.
+      </p>
+
+      <!-- Busca e filtros -->
+      <section class="filter-box" aria-label="Filtros de pesquisa">
+        <div class="search-group">
+          <label for="input-search" class="filter-label">Pesquisar por nome do curso</label>
+          <div class="search-input-wrapper">
+            <div class="search-input-container">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input
+                type="search"
+                id="input-search"
+                class="search-input"
+                placeholder="Ex.: Matemática, Têxtil, Segurança, Sustentabilidade..."
+                autocomplete="off"
+              />
+            </div>
+            <button id="btn-search" class="btn-search" type="button">Buscar</button>
+          </div>
+        </div>
+
+        <div class="filters-row">
+          <div>
+            <label for="select-category" class="filter-label">Categoria</label>
+            <select id="select-category" class="select-filter">
+              <option value="">Todas as categorias</option>
+              <option value="Matemática">Matemática</option>
+              <option value="Ciências da Natureza">Ciências da Natureza</option>
+              <option value="Sustentabilidade">Sustentabilidade</option>
+              <option value="Linguagens">Linguagens</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="select-modality" class="filter-label">Modalidade</label>
+            <select id="select-modality" class="select-filter">
+              <option value="">Todas as modalidades</option>
+              <option value="EAD (Online)">EAD (Online)</option>
+              <option value="Semipresencial">Semipresencial</option>
+              <option value="Presencial">Presencial</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="select-status" class="filter-label">Status</label>
+            <select id="select-status" class="select-filter">
+              <option value="">Todos os status</option>
+              <option value="Inscrições Abertas">Inscrições Abertas</option>
+              <option value="Em Breve">Em Breve</option>
+              <option value="Concluído">Concluído</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="filter-status-bar">
+          <div id="results-count" class="results-count" aria-live="polite">Carregando cursos...</div>
+          <button id="btn-clear-filters" class="btn-clear-filters" type="button">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            Limpar filtros
+          </button>
+        </div>
+      </section>
+
+      <!-- Carregando -->
+      <div id="loading-state" class="state-container" aria-live="polite">
+        <div class="spinner"></div>
+        <p class="state-title">Carregando cursos disponíveis...</p>
+        <p class="state-desc">Consultando a API do Centro de Tecnologias e Educação Digital.</p>
+      </div>
+
+      <!-- Mensagem de erro -->
+      <div id="error-state" class="error-box" style="display: none;" role="alert">
+        <h2 class="error-title">Não foi possível carregar os cursos</h2>
+        <p id="error-message" class="state-desc" style="margin-bottom: 16px;">
+          Ocorreu um erro na comunicação com o servidor.
+        </p>
+        <button id="btn-retry" class="btn-search" type="button" style="height: 40px; padding: 0 20px;">Tentar novamente</button>
+      </div>
+
+      <!-- Sem resultados -->
+      <div id="empty-state" class="state-container" style="display: none;">
+        <h2 class="state-title">Nenhum curso encontrado</h2>
+        <p class="state-desc">
+          Tente ajustar sua busca por outros termos ou redefinir os filtros aplicados.
+        </p>
+        <div style="margin-top: 18px;">
+          <button id="btn-empty-clear" class="btn-secondary" type="button">Redefinir filtros</button>
+        </div>
+      </div>
+
+      <!-- Lista de cursos -->
+      <div id="courses-grid" class="courses-grid" aria-live="polite"></div>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">
+            <img src="assets/icons/logo-sesi-industria-white.svg" alt="SESI Indústria" />
+          </div>
+          <div class="footer-contact">
+            <p>contato@sesindustria.com.br</p>
+            <p>Av. Paulista, 1313</p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="index.html#sobre">Certificação</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="index.html#sobre">Sobre</a></li>
+            <li><a href="index.html#sobre">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Cursos Populares</h4>
+          <ul>
+            <li><a href="cursos.html">Cultura Organizacional</a></li>
+            <li><a href="cursos.html">Ferramentas Google para Produtividade</a></li>
+            <li><a href="cursos.html">Excel Básico ao Avançado</a></li>
+            <li><a href="cursos.html">Trabalho em Equipe e Colaboração</a></li>
+            <li><a href="cursos.html">Gestão do Tempo e Produtividade</a></li>
+            <li><a href="cursos.html">Comunicação Assertiva</a></li>
+            <li><a href="cursos.html">Inteligência Emocional no Trabalho</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Suporte</h4>
+          <ul>
+            <li><a href="#">Termos de Uso</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Trabalhe Conosco</a></li>
+            <li><a href="#">Fale Conosco</a></li>
+            <li><a href="#">Central de Ajuda</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-rights">
+          <img src="assets/icons/logo-sesi.svg" alt="SESI" />
+          <span>Todos os direitos reservados.</span>
+        </div>
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn SESI"><img src="assets/icons/icon-linkedIn-24px.svg" alt="LinkedIn SESI" /></a>
+          <a href="#" aria-label="Instagram SESI"><img src="assets/icons/icon-instagram-24px.svg" alt="Instagram SESI" /></a>
+          <a href="#" aria-label="Facebook SESI"><img src="assets/icons/icon-facebook-24px.svg" alt="Facebook SESI" /></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js?v=3.4"></script>
+  <script src="js/catalogo.js?v=3.4"></script>
+</body>
+</html>

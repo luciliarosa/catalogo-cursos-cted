@@ -1,0 +1,32 @@
+# Configuração híbrida de quebras de linha entre Windows e macOS/Linux
+* text=auto eol=lf
+
+# Scripts e código Unix/Mac
+*.sh text eol=lf
+*.py text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+
+# Scripts e arquivos do ecossistema Windows / Visual Studio
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.sln text eol=crlf
+*.csproj text eol=crlf
+
+# Arquivos Binários (não alteram quebra de linha)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.svg text eol=lf
+*.ttf binary
+*.woff binary
+*.woff2 binary
+*.db binary
+*.dll binary
+*.exe binary
+*.zip binary
+*.pdf binary
+*.docx binary

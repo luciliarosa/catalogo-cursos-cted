@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "🌐 Abrir Catálogo SESI (Mac / Windows)",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5298",
+      "webRoot": "${workspaceFolder}/frontend",
+      "preLaunchTask": "🚀 Iniciar Projeto Completo (Híbrido Mac / Windows)"
+    },
+    {
+      "name": "⚙️ Debug API .NET 8 (C#)",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "${workspaceFolder}/backend/SesiCursos.Api/bin/Debug/net8.0/SesiCursos.Api.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/backend/SesiCursos.Api",
+      "stopAtEntry": false,
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "http://localhost:5298"
+      },
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{2796E386-555B-4CC5-83FB-C2E196A4C0B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SesiCursos.Api", "backend\SesiCursos.Api\SesiCursos.Api.csproj", "{18FFC060-76C0-4895-87DF-77C757E0E607}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SesiCursos.Tests", "backend\SesiCursos.Tests\SesiCursos.Tests.csproj", "{A71ABA77-D587-4FBD-B444-5964F1EC5CD4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18FFC060-76C0-4895-87DF-77C757E0E607}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18FFC060-76C0-4895-87DF-77C757E0E607}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18FFC060-76C0-4895-87DF-77C757E0E607}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18FFC060-76C0-4895-87DF-77C757E0E607}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A71ABA77-D587-4FBD-B444-5964F1EC5CD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A71ABA77-D587-4FBD-B444-5964F1EC5CD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A71ABA77-D587-4FBD-B444-5964F1EC5CD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A71ABA77-D587-4FBD-B444-5964F1EC5CD4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{18FFC060-76C0-4895-87DF-77C757E0E607} = {2796E386-555B-4CC5-83FB-C2E196A4C0B3}
+		{A71ABA77-D587-4FBD-B444-5964F1EC5CD4} = {2796E386-555B-4CC5-83FB-C2E196A4C0B3}
+	EndGlobalSection
+EndGlobal

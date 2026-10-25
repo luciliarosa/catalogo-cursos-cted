@@ -1,0 +1,97 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🚀 Iniciar Projeto Completo (Híbrido Mac / Windows)",
+      "type": "shell",
+      "osx": {
+        "command": "./iniciar.sh"
+      },
+      "linux": {
+        "command": "./iniciar.sh"
+      },
+      "windows": {
+        "command": ".\\iniciar.bat"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^.*SESI-SP CTED.*",
+          "endsPattern": "^.*Now listening on:.*"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "🧪 Executar Testes Automatizados (Híbrido Mac / Windows)",
+      "type": "shell",
+      "osx": {
+        "command": "./testar.sh"
+      },
+      "linux": {
+        "command": "./testar.sh"
+      },
+      "windows": {
+        "command": ".\\testar.bat"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "⚙️ Rodar API .NET 8 (dotnet run)",
+      "type": "shell",
+      "command": "dotnet run --project backend/SesiCursos.Api/SesiCursos.Api.csproj",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "🐍 Rodar Servidor Híbrido (Python 3 + SQLite)",
+      "type": "shell",
+      "osx": {
+        "command": "python3 scripts/hybrid_server.py --port 5298"
+      },
+      "linux": {
+        "command": "python3 scripts/hybrid_server.py --port 5298"
+      },
+      "windows": {
+        "command": "python scripts/hybrid_server.py --port 5298"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    }
+  ]
+}
