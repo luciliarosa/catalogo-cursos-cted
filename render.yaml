@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: catalogo-cursos-cted
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: ASPNETCORE_URLS
+        value: http://0.0.0.0:10000

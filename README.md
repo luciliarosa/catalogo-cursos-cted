@@ -168,14 +168,14 @@ Segui o visual do protótipo do Figma à risca nas três telas desenhadas no arq
 **O que foi adicionado além das telas do Figma e o motivo:**
 - **Tela de Catálogo com Busca e Filtros (`cursos.html`)**: no protótipo do Figma não havia uma tela separada desenhada especificamente com os campos de busca por nome, filtros de Categoria/Modalidade/Status, contador de resultados e botão de limpar filtros, mas esses itens eram obrigatórios nas instruções do edital. Por isso, criei a página `cursos.html` mantendo exatamente o mesmo cabeçalho, os mesmos cards de curso, a mesma paleta de cores (`#A60502`, `#0C0C0D`, `#FAF9F6`), a fonte Open Sans e o mesmo rodapé das outras páginas para não fugir da identidade visual do Figma.
 
-## 11. Como Publicar Gratuitamente (Deploy)
+## 11. Como Publicar Gratuitamente (Deploy via Docker no Render)
 
-Para publicar o projeto gratuitamente no **Render** ou **Railway**:
-1. Subir o código em um repositório no GitHub.
-2. Criar um Web Service apontando para o repositório:
-   - **Build Command:** `dotnet publish backend/SesiCursos.Api/SesiCursos.Api.csproj -c Release -o out`
-   - **Start Command:** `dotnet out/SesiCursos.Api.dll`
-3. Como a API já serve a pasta `frontend/`, o front-end e o back-end ficam disponíveis juntos no mesmo link gerado pela plataforma.
+O projeto já possui o `Dockerfile` e o `.dockerignore` na raiz para subir direto no **Render**:
+1. Subir o projeto para um repositório no GitHub.
+2. No painel do Render, clicar em **New +** -> **Web Service** e conectar o repositório.
+3. Em **Language / Runtime**, selecionar **Docker** (o Render vai ler o `Dockerfile` da raiz automaticamente).
+4. Escolher o plano **Free** e clicar em **Create Web Service**.
+5. Como o `Dockerfile` empacota a API junto com a pasta `frontend/` e já cria o banco SQLite automaticamente na inicialização (ou conecta no PostgreSQL caso a variável `DATABASE_URL` seja informada), o site inteiro e o Swagger (`/swagger`) ficam no ar na mesma URL do Render.
 
 ## 12. Limitações do Escopo
 

@@ -75,9 +75,14 @@ else
     Console.WriteLine($"[DB] Usando SQLite local ({sqliteConn}).");
 }
 
-// Define a porta 5298 como padrão
-if (string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable("ASPNETCORE_URLS")) &&
-    string.IsNullOrWhiteSpace(builder.Configuration["urls"]))
+// Usa a porta do Render (variável PORT) quando estiver na nuvem ou 5298 localmente
+var renderPort = Environment.GetEnvironmentVariable("PORT");
+if (!string.IsNullOrWhiteSpace(renderPort))
+{
+    builder.WebHost.UseUrls($"http://0.0.0.0:{renderPort}");
+}
+else if (string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable("ASPNETCORE_URLS")) &&
+         string.IsNullOrWhiteSpace(builder.Configuration["urls"]))
 {
     builder.WebHost.UseUrls("http://localhost:5298");
 }

@@ -1,5 +1,10 @@
-// Define a URL da API na porta 5298
-const API_BASE_URL = (window.location.port === '5298') ? '' : 'http://localhost:5298';
+// Se abrir pelo Live Server local (porta diferente de 5298), aponta para localhost:5298.
+// No Render ou rodando direto na porta 5298, usa a mesma URL do servidor.
+const isLocalOtherPort = (
+  window.location.protocol === 'file:' ||
+  ((window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && window.location.port !== '5298')
+);
+const API_BASE_URL = isLocalOtherPort ? 'http://localhost:5298' : '';
 
 // Lista de reserva caso a página seja aberta sem o servidor da API estar rodando
 const FALLBACK_COURSES = [
