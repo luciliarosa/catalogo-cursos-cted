@@ -4,9 +4,9 @@ Projeto desenvolvido para o processo seletivo de **Desenvolvedor de Sistemas I (
 
 ## Links de Entrega
 
-- **Link da Aplicação (Render):** 
-- **Link do Swagger (API):** 
-- **Link do Repositório (GitHub):** 
+- **Link da Aplicação (Render):** `https://catalogo-cursos-cted.onrender.com`
+- **Link do Swagger (API):** `https://catalogo-cursos-cted.onrender.com/swagger`
+- **Link do Repositório (GitHub):** `https://github.com/luciliarosa/catalogo-cursos-cted`
 
 > **Observação sobre o plano gratuito do Render:** Como a aplicação está hospedada no plano gratuito do Render, o servidor entra em modo de espera após alguns minutos sem acesso. Por isso, **no primeiro acesso pode levar cerca de 40 a 50 segundos** para o servidor acordar e carregar os cursos. Nos acessos seguintes o carregamento é imediato.
 
