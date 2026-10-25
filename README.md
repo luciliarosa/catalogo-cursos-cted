@@ -70,6 +70,10 @@ catalogo-cursos-cted/
 │   ├── init_database_postgres.sql
 │   ├── init_database_sqlite.sql
 │   └── hybrid_server.py         # Script auxiliar para rodar com Python + SQLite
+├── Dockerfile                   # Configuração para gerar a imagem Docker (Render)
+├── .dockerignore                # Arquivos ignorados no build do Docker
+├── render.yaml                  # Configuração de deploy automático no Render
+├── SesiCursos.sln               # Solução do projeto .NET
 ├── iniciar.sh / iniciar.bat     # Atalhos para subir o projeto no Mac ou Windows
 ├── testar.sh / testar.bat       # Atalhos para rodar os testes
 ├── README.md
@@ -134,8 +138,32 @@ Retorna a lista de cursos e aceita os seguintes parâmetros opcionais na URL:
 - `modality`: filtra pela modalidade (ex: `/api/courses?modality=Online`)
 - `status`: filtra pelo status (ex: `/api/courses?status=Inscrições Abertas`)
 
+**Exemplo de retorno (`200 OK`):**
+```json
+{
+  "total": 8,
+  "filteredTotal": 1,
+  "items": [
+    {
+      "id": 1,
+      "fullName": "Matemática para a Precisão: Medidas e Escalas na Metalurgia",
+      "shortName": "Matemática para Precisão",
+      "description": "Explore nosso curso de Matemática para a Precisão...",
+      "category": "Matemática",
+      "modality": "Online",
+      "workloadHours": 40,
+      "targetAudience": "Operadores de usinagem, torneiros mecânicos...",
+      "status": "Inscrições Abertas",
+      "imageUrl": "/assets/images/banner-ava.png",
+      "availableDate": "2026-01-05T00:00:00",
+      "certification": "SESI"
+    }
+  ]
+}
+```
+
 ### `GET /api/courses/{id}`
-Retorna todos os dados de um curso específico pelo `id`, incluindo a lista de módulos, aulas e perguntas frequentes. Se o `id` não existir, retorna `404 Not Found`.
+Retorna todos os dados de um curso específico pelo `id`, incluindo a lista de módulos (`modules`), aulas (`lessons`) e perguntas frequentes (`faqs`). Se o `id` não existir, retorna `404 Not Found`.
 
 ### `GET /api/health`
 Rota simples para testar se a API e a conexão com o banco estão funcionando (`200 OK`).

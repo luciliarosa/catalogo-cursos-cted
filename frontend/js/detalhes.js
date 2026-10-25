@@ -94,12 +94,48 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const descEl = document.getElementById('detail-full-description');
     if (descEl) {
-      if (Number(course.id) === 1) {
-        descEl.innerHTML = `
-          <p>Explore nosso curso de Matemática para a Precisão: Medidas e Escalas na Metalurgia, perfeito para quem deseja se destacar nesse campo! Este programa abrangente foi desenvolvido para capacitar profissionais com as habilidades e conhecimentos fundamentais para garantir medições precisas e eficientes no ambiente metalúrgico.</p>
-        `;
-      } else if (course.description) {
-        descEl.innerHTML = `<p>${course.description}</p>`;
+      const mainDesc = Number(course.id) === 1
+        ? 'Explore nosso curso de Matemática para a Precisão: Medidas e Escalas na Metalurgia, perfeito para quem deseja se destacar nesse campo! Este programa abrangente foi desenvolvido para capacitar profissionais com as habilidades e conhecimentos fundamentais para garantir medições precisas e eficientes no ambiente metalúrgico.'
+        : (course.description || '');
+
+      descEl.innerHTML = `
+        <p>${mainDesc}</p>
+        <div class="course-extra-details" style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #EAEAEA; font-size: 14px; color: #555555; line-height: 1.6;">
+          ${course.shortName ? `<p style="font-size: 14px; margin-bottom: 6px; color: #444444;"><strong>Nome breve:</strong> ${course.shortName}</p>` : ''}
+          ${course.modality ? `<p style="font-size: 14px; margin-bottom: 6px; color: #444444;"><strong>Modalidade:</strong> ${course.modality}</p>` : ''}
+          ${course.workloadHours ? `<p style="font-size: 14px; margin-bottom: 6px; color: #444444;"><strong>Carga horária:</strong> ${course.workloadHours}h</p>` : ''}
+          ${course.status ? `<p style="font-size: 14px; margin-bottom: 6px; color: #444444;"><strong>Status:</strong> ${course.status}</p>` : ''}
+          ${course.targetAudience ? `<p style="font-size: 14px; margin-bottom: 0; color: #444444;"><strong>Público-alvo:</strong> ${course.targetAudience}</p>` : ''}
+        </div>
+      `;
+    }
+
+    // Para os cursos de ID 2 a 8, preenche os módulos, descrições de aulas e dúvidas vindos do banco.
+    // No curso 1 mantém exatamente os 10 módulos e 10 perguntas do protótipo do Figma.
+    if (Number(course.id) !== 1) {
+      const modulesContainer = document.getElementById('modules-container');
+      if (modulesContainer && Array.isArray(course.modules) && course.modules.length > 0) {
+        modulesContainer.innerHTML = course.modules.map((mod, idx) => {
+          const lessonsHtml = Array.isArray(mod.lessons) && mod.lessons.length > 0
+            ? `<ul>${mod.lessons.map(l => `<li><strong>${l.title}</strong>${l.description ? ` — ${l.description}` : ''}${l.durationMinutes ? ` (${l.durationMinutes} min)` : ''}</li>`).join('')}</ul>`
+            : '';
+          return `
+            <div class="figma-module-block">
+              <h4>${mod.title || `${idx + 1}. Módulo ${idx + 1}`}</h4>
+              ${lessonsHtml}
+            </div>
+          `;
+        }).join('');
+      }
+
+      const faqBody = document.querySelector('#acc-body-faq .figma-accordion-content');
+      if (faqBody && Array.isArray(course.faqs) && course.faqs.length > 0) {
+        faqBody.innerHTML = course.faqs.map((f, idx) => `
+          <div class="figma-faq-block">
+            <h4>${idx + 1}. ${f.question}</h4>
+            <p>${f.answer}</p>
+          </div>
+        `).join('');
       }
     }
 
